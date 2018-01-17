@@ -123,7 +123,7 @@ function editaCartao() {
         $(document).trigger("precisaSincronizar");
 
     },500);
-
+//teste
 
 }
 
