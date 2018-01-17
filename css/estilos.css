@@ -1,0 +1,56 @@
+
+.cabecalho {
+    background: #0082c7;
+}
+
+.container {
+    padding: 0 10%;
+}
+
+body{
+    background: #e8e8e8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+#mudalayout{
+    display: none; /* botao some */
+}
+
+.cartao--some {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+@media(min-width:560px){
+    .cartao { 
+    width: 190px;
+    display: inline-block; /* inline voce consegue mexer no width e height pra evitar o float*/
+ /* display: block; esse block usa o width em 100% */
+    text-align: left;
+    flex-grow: 1; /* usa o que sobrar*/
+    flex-basis: 190px; /* o 190 eh o width*/
+    }
+    .mural {
+    text-align: center;
+    display: flex; /* ele espreme tudo na mesma linha*/ 
+    flex-wrap: wrap; /* quebra de linha */
+    }
+    #mudalayout{
+        display: inline-block;
+    }
+    .mural--linhas { /* esse -- vem do padrao BEM */
+        flex-direction: column;
+    }
+    .mural--linhas .cartao {
+        flex-basis: auto;
+        width: auto;
+        display: block;
+    }
+}
+
+
