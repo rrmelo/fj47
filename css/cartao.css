@@ -20,7 +20,7 @@
 	}
 
 	.cartao--textoPequeno {
-		background: green;
+		background: rgb(207, 190, 32);
 		font-size: 1em;
 		width: 11em;
 		flex-basis: 11em;

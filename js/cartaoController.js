@@ -86,6 +86,7 @@ function adicionaCartao(texto, cor) {
     // cria o p do texto do form
     const paragrafo = $("<p>")
             .on("input", editaCartao)
+            .on("paste", event=>event.preventDefault())
             .attr("contenteditable", true)
             .addClass("cartao-conteudo")
             .html(texto); // pode ser o html ou append ai
@@ -113,21 +114,25 @@ function adicionaCartao(texto, cor) {
 }
 
 
- var timer = 0;
+var timer = 0;
 function editaCartao() {
 
-    console.log(timer);
+    const paragrafo = $(this);
+
     clearTimeout(timer);
     timer = setTimeout(function(){
 
         $(document).trigger("precisaSincronizar");
 
+        const tipo = decideTipoCartao(paragrafo.html());
+        paragrafo.closest(".cartao")
+        .removeClass("texto--cartaoPequeno texto--cartaoMedio texto--cartaoGrande")
+        .addClass(tipo);
+        
     },500);
-//teste
-
 }
 
-
+ // teste console.log(timer);
 
 const botoes = document.querySelectorAll(".opcoesDoCartao-remove");
 
